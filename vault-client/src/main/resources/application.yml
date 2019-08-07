@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: otx-key
+  servlet:
+    context-path: /gw/api
+  tomcat:
+    max-threads: 300
+
+vault:
+  otx-secret:
+    name: secret
+    path: otx-key/master
+
+--- #local
+spring:
+  profiles: local
+  devtools:
+    livereload:
+      enabled: true
+    thymeleaf:
+      cache: true
+
+--- #dev
+spring:
+  profiles: dev
